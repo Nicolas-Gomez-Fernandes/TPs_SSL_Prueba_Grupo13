@@ -12,7 +12,7 @@ void armarTablaDeConversion(float valorInicialNudos, float valorFinalNudos, floa
         numeroPorDefecto = 2; 
     }
     for (float valorActualNudos = valorInicialNudos; valorActualNudos <= valorFinalNudos; valorActualNudos += saltoDeValores) {
-        float kmh = convetirNudosAKilometrosPorHora(valorActualNudos); 
+        float kmh = convetirEnKm(valorActualNudos); 
         printf("|   %7.2f     |   %7.4f   |\n", valorActualNudos, kmh); 
     }
 }

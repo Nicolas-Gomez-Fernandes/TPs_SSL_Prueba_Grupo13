@@ -4,8 +4,4 @@
 // Prototipo Funncion
 float convertirEnKm (float velocidadEnNudos);
 
-// Variables a usar
-float velocidadEnNudos;
-float velocidadEnKm;
-
 #endif // CONVERSION_H_INCLUDED

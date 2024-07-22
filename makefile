@@ -1,26 +1,23 @@
+CC = gcc
+CFLAGS = -g -Wall -c -pedantic-errors -std=c2x
+
 all: programa
 
-#Esta regla compila el programa principal 
 programa: main.o tabla.o conversion.o
-	gcc -o programa main.o tabla.o conversion.o
+    $(CC) $(CFLAGS) -o tabla main.o tabla.o conversion.o
 
-main.o: main.c tabla.h 
-	gcc -c main.c
+main.o: main.c tabla.h
+    $(CC) $(CFLAGS) -c main.c
 
 tabla.o: tabla.c tabla.h conversion.h
-	gcc -c tabla.o
+    $(CC) $(CFLAGS) -c tabla.c
 
 conversion.o: conversion.c conversion.h
-	gcc -c conversion.o
+    $(CC) $(CFLAGS) -c conversion.c
 
-clean: 
-	rm main.o tabla.o conversion.o programa
-
-run: programa
-	./programa
-
-
-
+clean:
+    rm main.o tabla.o conversion.o programa
+    
 
 
 

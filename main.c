@@ -1,15 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
 #include "tabla.h"
-#define SALTO 1.0
 
-int main(void)
-{
-    float a = 10.0;
-    float b = 20.0;
-    float c = SALTO;
+int main(int argc, char *argv[]) {
+    float valorInicialNudos, valorFinalNudos, saltoDeValores; 
 
-    armarTablaDeConversion(a , b , SALTO);
+    if (argc < 3) {
+        fprintf(stderr, "Uso: %s inicio fin [incremento]\n", argv[0]);
+        return 1;
+    }
 
-    
+    valorInicialNudos = atof(argv[1]);
+    valorFinalNudos = atof(argv[2]);
+
+    if (argc >= 4) {
+        saltoDeValores = atof(argv[3]);
+    } else {
+        saltoDeValores = 1.0;
+    }
+
+
+	armarTablaDeConversion(valorInicialNudos, valorFinalNudos, saltoDeValores);
     return 0;
 }
